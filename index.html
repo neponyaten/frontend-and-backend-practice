@@ -1,50 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Семестровая работа</title>
-    </head>
-    <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="pages/news.html">Новости</a></li>
-                <li><a href="pages/practices.html">Практики</a></li> 
-                <li><a href="pages/goods.html">Товары</a></li>
-                <li><a href="pages/contacts.html">Контакты</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM//PROTOCOL</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <!-- Хэдер будет стилизован через псевдоэлементы -->
+        </div>
+        
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link glitch-effect" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
             </ul>
         </div>
-        <div id="content">
-            <h1>Информация об авторе</h1> 
-            <img src="image/photo.jpg" alt="Фото автора" width="250" height="250">
-            <h2>Чекунов Кирилл Александрович</h2> 
-            <p><strong>Учебная группа:</strong> ЭФБО-15-24</p> 
-            <h3>Обо мне:</h3> 
-            <p>Я родился в Москве в 2006 на краю города. Глупость рано ударила в голову. В четыре активно ругался.
-Потом школа, форма, драки, клей. Так я становился сильней. Воровал деньги в раздевалке.</p>
-            <div>
-                <h3>Мои навыки:</h3>
-                <div>Владею экзоротшопом</div>
-                 <img src="image/goods1.jpg" alt="Exort" width="90" height="90">
-                <div>Отлично знаю векс++</div>
-                 <img src="image/goods2.jpg" alt="Wex" width="90" height="90">
-                <div>Пишу на питоналакрити</div>
-                 <img src="image/goods3.jpg" alt="Alacrity" width="90" height="90">
-            </div>
-            <div>
-                <h3>Мой опыт работы:</h3>
-                <div>
-                    <h4>Приступим...</h4>
-                    <p>Мыл фары на трассе, за 250 т.р в месяц, сейчас перешёл на онлайн заработок.</p>
+        
+        <div class="content">
+            <div class="profile-header">
+                <div class="profile-photo-container">
+                    <img class="profile-photo" src="image/photo.jpg" alt="Фото автора">
                 </div>
-                <div>
-                    <h4>Онлайн заработок</h4>
-                    <p>Подарки в телеге, рэпчик, разные темки</p>
+                <div class="profile-info">
+                    <div class="profile-title">Информация об авторе</div>
+                    <h1 class="profile-name">Чекунов Кирилл Александрович</h1>
+                    <div class="profile-group">ЭФБО-15-24</div>
+                </div>
+            </div>
+            
+            <div class="about-me">
+                <p>Я родился в Москве в 2006 на краю города. Глупость рано ударила в голову. В четыре активно ругался. Потом школа, форма, драки, клей. Так я становился сильней. Воровал деньги в раздевалке.</p>
+            </div>
+            
+            <div class="skills-section">
+                <h2 class="section-title">Технические компетенции</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <img class="skill-icon" src="image/goods1.jpg" alt="Exort">
+                        <div class="skill-content">
+                            <h3 class="skill-title">Владею экзоротшопом</h3>
+                            <p class="skill-desc">Профессиональная обработка изображений</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img class="skill-icon" src="image/goods2.jpg" alt="Wex">
+                        <div class="skill-content">
+                            <h3 class="skill-title">Отлично знаю векс++</h3>
+                            <p class="skill-desc">Разработка высокопроизводительных приложений</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <img class="skill-icon" src="image/goods3.jpg" alt="Alacrity">
+                        <div class="skill-content">
+                            <h3 class="skill-title">Пишу на питоналакрити</h3>
+                            <p class="skill-desc">Быстрая разработка скриптов и автоматизация</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experience-section">
+                <h2 class="section-title">Профессиональный опыт</h2>
+                <div class="experience-timeline">
+                    <div class="experience-card">
+                        <h3 class="experience-title">Приступим...</h3>
+                        <p class="experience-desc">Мыл фары на трассе, за 250 т.р в месяц, сейчас перешёл на онлайн заработок.</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3 class="experience-title">Онлайн заработок</h3>
+                        <p class="experience-desc">Подарки в телеге, рэпчик, разные темки</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="footer">Футер</div>    
-    </body>
+        
+        <div class="footer">
+            <!-- Футер будет стилизован через псевдоэлементы -->
+        </div>
+    </div>
+</body>
 </html>
