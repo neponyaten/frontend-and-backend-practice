@@ -9,6 +9,7 @@
     --gray-light: #404040;
     --accent: #FF3B30;
     --neon: #00F0FF;
+    --neon-green: #00FF88;
     --font-primary: 'Inter', sans-serif;
 }
 
@@ -48,7 +49,7 @@ body {
     z-index: -1;
 }
 
-/* ===== ШАПКА В СТИЛЕ MODERN BRAND ===== */
+/* ===== ШАПКА ===== */
 .header {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(20px);
@@ -59,22 +60,19 @@ body {
     z-index: 1000;
 }
 
-.header::after {
-    content: 'SYSTEM//PROTOCOL';
-    position: absolute;
-    bottom: -12px;
-    left: 2rem;
-    font-size: 0.7rem;
+.header-title {
+    font-size: 0.9rem;
     font-weight: 300;
     letter-spacing: 3px;
     color: var(--neon);
-    opacity: 0.7;
+    text-transform: uppercase;
 }
 
-/* ===== НАВИГАЦИЯ - МИНИМАЛИСТИЧНАЯ ===== */
+/* ===== НАВИГАЦИЯ ===== */
 .nav {
     background: transparent;
     padding: 0;
+    border-bottom: 1px solid var(--gray-light);
 }
 
 .nav-list {
@@ -83,15 +81,14 @@ body {
     justify-content: center;
     gap: 3rem;
     padding: 1.5rem 0;
-    border-bottom: 1px solid var(--gray-light);
 }
 
 .nav-link {
     color: var(--white);
     text-decoration: none;
     font-weight: 300;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
     padding: 0.5rem 0;
@@ -124,10 +121,10 @@ body {
     margin: 0 auto;
 }
 
-/* ===== ПРОФИЛЬ - АСИММЕТРИЧНЫЙ ДИЗАЙН ===== */
+/* ===== ПРОФИЛЬ ===== */
 .profile-header {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 300px 1fr;
     gap: 3rem;
     align-items: start;
     margin-bottom: 4rem;
@@ -146,13 +143,9 @@ body {
     z-index: -1;
 }
 
-.profile-photo-container {
-    position: relative;
-}
-
 .profile-photo {
     width: 100%;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
     filter: grayscale(100%) contrast(120%);
     border: 1px solid var(--gray-light);
@@ -169,108 +162,154 @@ body {
 }
 
 .profile-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--neon);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .profile-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 1rem;
     line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .profile-group {
     font-size: 1.1rem;
-    color: var(--gray-light);
-    font-weight: 300;
-    margin-bottom: 2rem;
+    color: var(--neon-green);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
 }
 
-/* ===== ОБО МНЕ - ТИПОГРАФИЧЕСКИЙ АКЦЕНТ ===== */
+.profile-status {
+    font-size: 0.9rem;
+    color: var(--gray-light);
+    font-weight: 300;
+}
+
+/* ===== ОБО МНЕ ===== */
 .about-me {
     background: var(--gray-dark);
-    padding: 3rem;
+    padding: 2rem;
     margin: 3rem 0;
     border-left: 3px solid var(--accent);
     position: relative;
 }
 
-.about-me::before {
-    content: '"';
-    position: absolute;
-    top: -1rem;
-    left: 2rem;
-    font-size: 8rem;
-    color: var(--accent);
-    opacity: 0.2;
-    font-family: serif;
+.section-marker {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--neon);
+    margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 .about-me p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     font-weight: 300;
-    position: relative;
-    z-index: 1;
 }
 
-/* ===== НАВЫКИ - ГРИД СИСТЕМА ===== */
+/* ===== НАВЫКИ ===== */
 .skills-section {
     margin: 4rem 0;
 }
 
-.section-title {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--neon);
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
-
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.skill-tag {
+.skill-card {
     background: var(--gray-medium);
     padding: 1.5rem;
-    text-align: center;
     border: 1px solid var(--gray-light);
-    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.skill-tag::before {
+.skill-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
     transition: left 0.5s ease;
 }
 
-.skill-tag:hover::before {
+.skill-card:hover::before {
     left: 100%;
 }
 
-.skill-tag:hover {
+.skill-card:hover {
     border-color: var(--neon);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
-/* ===== ОПЫТ РАБОТЫ - ВЕРТИКАЛЬНАЯ ТИМЕЙЛАЙН ===== */
+.skill-icon-container {
+    position: relative;
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid var(--gray-light);
+    filter: grayscale(100%) contrast(120%);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    filter: grayscale(0%) contrast(110%);
+    border-color: var(--neon);
+}
+
+.skill-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent);
+    color: var(--white);
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    border-radius: 10px;
+}
+
+.skill-content {
+    flex: 1;
+}
+
+.skill-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--neon);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-desc {
+    font-size: 0.9rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/* ===== ОПЫТ РАБОТЫ ===== */
 .experience-section {
     margin: 4rem 0;
 }
@@ -278,6 +317,7 @@ body {
 .experience-timeline {
     position: relative;
     padding-left: 2rem;
+    margin-top: 2rem;
 }
 
 .experience-timeline::before {
@@ -316,11 +356,20 @@ body {
     transform: translateX(10px);
 }
 
+.experience-date {
+    font-size: 0.8rem;
+    color: var(--neon-green);
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
 .experience-title {
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 0.5rem;
-    color: var(--neon);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .experience-desc {
@@ -329,25 +378,23 @@ body {
     line-height: 1.5;
 }
 
-/* ===== ФУТЕР - УЛЬТРАМИНИМАЛИСТИЧНЫЙ ===== */
+/* ===== ФУТЕР ===== */
 .footer {
     background: var(--gray-dark);
-    padding: 3rem 2rem;
+    padding: 2rem;
     text-align: center;
     border-top: 1px solid var(--gray-light);
     margin-top: 4rem;
 }
 
-.footer::before {
-    content: 'SYSTEM OFFLINE';
-    display: block;
+.footer-text {
     font-size: 0.8rem;
-    letter-spacing: 2px;
     color: var(--gray-light);
-    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* ===== АНИМАЦИИ И ЭФФЕКТЫ ===== */
+/* ===== АНИМАЦИИ ===== */
 @keyframes glitch {
     0% { transform: translate(0); }
     20% { transform: translate(-2px, 2px); }
@@ -384,90 +431,9 @@ body {
     .skills-grid {
         grid-template-columns: 1fr;
     }
-    /* ===== КАРТОЧКИ НАВЫКОВ С ИКОНКАМИ ===== */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-card {
-    background: var(--gray-medium);
-    padding: 1.5rem;
-    border: 1px solid var(--gray-light);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.skill-card:hover::before {
-    left: 100%;
-}
-
-.skill-card:hover {
-    border-color: var(--neon);
-    transform: translateY(-3px);
-}
-
-.skill-icon {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 1px solid var(--gray-light);
-    filter: grayscale(100%) contrast(120%);
-    transition: all 0.3s ease;
-}
-
-.skill-card:hover .skill-icon {
-    filter: grayscale(0%) contrast(110%);
-    border-color: var(--neon);
-}
-
-.skill-content {
-    flex: 1;
-}
-
-.skill-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--neon);
-    margin-bottom: 0.5rem;
-}
-
-.skill-desc {
-    font-size: 0.9rem;
-    color: var(--gray-light);
-    font-weight: 300;
-    line-height: 1.4;
-}
-
-/* ===== АДАПТИВНОСТЬ ДЛЯ КАРТОЧЕК ===== */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
     
     .skill-card {
         flex-direction: column;
         text-align: center;
     }
-    
-    .skill-icon {
-        width: 60px;
-        height: 60px;
-    }
-}}
+}
