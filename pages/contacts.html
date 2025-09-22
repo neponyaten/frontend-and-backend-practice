@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Контакты</title>
-    </head>
-    <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="practices.html">Практики</a></li> 
-                <li><a href="goods.html">Товары</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </div>
-        <div id="content">
-            <h1>Контакты</h1>
-            <p><strong>Электронная почта:</strong> <a href="9kmmruznik@max.ru">example@mail.ru</a></p>
-            <p><strong>Адрес:</strong> г. Москва, ул. Улица, д. Дом</p>
-            <button onclick="alert('Функция \'Позвоните мне\' еще не реализована.')">Позвоните мне</button>
-        </div>
-        <div id="footer">Футер</div>    
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты // SYSTEM PROTOCOL</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <div class="page-container">
+    
+    <div class="header">
+      <div class="header-title">CHERNOV K.A. // CONTACT PROTOCOL</div>
+    </div>
+
+    <div class="nav">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../index.html">ГЛАВНАЯ</a></li>
+        <li><a class="nav-link" href="news.html">НОВОСТИ</a></li>
+        <li><a class="nav-link" href="practices.html">ПРАКТИКИ</a></li>
+        <li><a class="nav-link" href="goods.html">ТОВАРЫ</a></li>
+        <li><a class="nav-link active" href="contacts.html">КОНТАКТЫ</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="section-marker">[CONTACT DATA]</div>
+      <h1>Контакты</h1>
+      <p><strong>Электронная почта:</strong> <a href="mailto:example@mail.ru">example@mail.ru</a></p>
+      <p><strong>Адрес:</strong> г. Москва, ул. Улица, д. Дом</p>
+      <button class="primary-btn" onclick="alert('Функция звонка пока не реализована.')">Позвоните мне</button>
+    </div>
+
+    <div class="footer">
+      <div class="footer-text">SYSTEM ONLINE // CONTACT PROTOCOL © 2025</div>
+    </div>
+
+  </div>
+</body>
 </html>
