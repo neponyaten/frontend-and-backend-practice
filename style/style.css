@@ -1,0 +1,387 @@
+/* ===== БАЗОВЫЕ СТИЛИ HI-TECH FASHION ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --gray-dark: #1A1A1A;
+    --gray-medium: #2A2A2A;
+    --gray-light: #404040;
+    --accent: #FF3B30;
+    --neon: #00F0FF;
+    --font-primary: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.4;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+.page-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--black) 0%, var(--gray-dark) 100%);
+    position: relative;
+}
+
+.page-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 59, 48, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 240, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ===== ШАПКА В СТИЛЕ MODERN BRAND ===== */
+.header {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--gray-light);
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header::after {
+    content: 'SYSTEM//PROTOCOL';
+    position: absolute;
+    bottom: -12px;
+    left: 2rem;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: var(--neon);
+    opacity: 0.7;
+}
+
+/* ===== НАВИГАЦИЯ - МИНИМАЛИСТИЧНАЯ ===== */
+.nav {
+    background: transparent;
+    padding: 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--neon);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--neon);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.content {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== ПРОФИЛЬ - АСИММЕТРИЧНЫЙ ДИЗАЙН ===== */
+.profile-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.profile-header::before {
+    content: '001';
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--gray-light);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.profile-photo-container {
+    position: relative;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%);
+    border: 1px solid var(--gray-light);
+    transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+    filter: grayscale(0%) contrast(110%);
+    transform: scale(1.02);
+}
+
+.profile-info {
+    padding-top: 2rem;
+}
+
+.profile-title {
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--neon);
+    margin-bottom: 0.5rem;
+}
+
+.profile-name {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.profile-group {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* ===== ОБО МНЕ - ТИПОГРАФИЧЕСКИЙ АКЦЕНТ ===== */
+.about-me {
+    background: var(--gray-dark);
+    padding: 3rem;
+    margin: 3rem 0;
+    border-left: 3px solid var(--accent);
+    position: relative;
+}
+
+.about-me::before {
+    content: '"';
+    position: absolute;
+    top: -1rem;
+    left: 2rem;
+    font-size: 8rem;
+    color: var(--accent);
+    opacity: 0.2;
+    font-family: serif;
+}
+
+.about-me p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== НАВЫКИ - ГРИД СИСТЕМА ===== */
+.skills-section {
+    margin: 4rem 0;
+}
+
+.section-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--neon);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skill-tag {
+    background: var(--gray-medium);
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--gray-light);
+    font-weight: 300;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.skill-tag:hover::before {
+    left: 100%;
+}
+
+.skill-tag:hover {
+    border-color: var(--neon);
+    transform: translateY(-2px);
+}
+
+/* ===== ОПЫТ РАБОТЫ - ВЕРТИКАЛЬНАЯ ТИМЕЙЛАЙН ===== */
+.experience-section {
+    margin: 4rem 0;
+}
+
+.experience-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--gray-light);
+}
+
+.experience-card {
+    background: var(--gray-dark);
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid var(--gray-light);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--neon);
+    border-radius: 50%;
+}
+
+.experience-card:hover {
+    border-color: var(--neon);
+    transform: translateX(10px);
+}
+
+.experience-title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--neon);
+}
+
+.experience-desc {
+    color: var(--gray-light);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* ===== ФУТЕР - УЛЬТРАМИНИМАЛИСТИЧНЫЙ ===== */
+.footer {
+    background: var(--gray-dark);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--gray-light);
+    margin-top: 4rem;
+}
+
+.footer::before {
+    content: 'SYSTEM OFFLINE';
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--gray-light);
+    margin-bottom: 1rem;
+}
+
+/* ===== АНИМАЦИИ И ЭФФЕКТЫ ===== */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.glitch-effect:hover {
+    animation: glitch 0.3s infinite;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .profile-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .profile-name {
+        font-size: 2rem;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .content {
+        padding: 2rem 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
